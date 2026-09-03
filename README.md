@@ -2,6 +2,15 @@
 
 A Windows-based FFmpeg automation utility that watches a folder for MP4 videos and converts each detected video into a **3-hour continuous loop**.
 
+## About
+
+This tool is what powers the wallpaper loops on my YouTube channel, **RaveX_Wallpapers** — I drop a source clip into `WATCH\`, this script turns it into a seamless multi-hour loop, and that's what gets uploaded.
+
+📺 **[youtube.com/@RaveX_Wallpapers](https://www.youtube.com/@RaveX_Wallpapers)**
+Smooth, seamless looping live wallpapers in HD/4K — gaming setups, PC wallpapers, anime aesthetics, and relaxing ambience for studying, focus, or just vibing. No jumps, no cuts, just continuous motion.
+
+If you make loop content too, feel free to use this tool and drop a link back here or credit the channel — always appreciated. Like, comment, and subscribe if these loops are useful to you!
+
 ## Features
 
 - Automatic WATCH-folder monitoring
@@ -139,21 +148,30 @@ The loop is built by repeating your clip N times in a list, then trimming that t
 
 If you only ever use clips longer than ~10 seconds, `ffprobe.exe` is not required. For short clips, add it to `bin\` to be safe.
 
-### Output duration
+### Changing the loop length
 
-The project is configured for:
+By default every output video is **10800 seconds (3 hours)**. To change this:
 
-```text
-10800 seconds
-```
-
-which is 3 hours.
-
-Change the following line in `scripts\watch_process.bat` if a different duration is required:
+1. Open `scripts\watch_process.bat` in Notepad (or any text editor).
+2. Find this line near the top:
 
 ```bat
 set "target_duration=10800"
 ```
+
+3. Replace `10800` with the number of seconds you want, and save the file.
+
+Some common values:
+
+| Desired length | Value to use          |
+|-----------------|-----------------------|
+| 1 hour           | `set "target_duration=3600"`  |
+| 2 hours          | `set "target_duration=7200"`  |
+| 3 hours (default)| `set "target_duration=10800"` |
+| 4 hours          | `set "target_duration=14400"` |
+| 8 hours          | `set "target_duration=28800"` |
+
+No other file needs to change — the script recalculates everything else (including how many times to repeat short clips) automatically based on this one value.
 
 ### Why FFmpeg binaries are not on GitHub
 
