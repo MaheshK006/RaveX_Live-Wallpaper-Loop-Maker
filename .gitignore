@@ -1,0 +1,38 @@
+# ============================================================
+# RaveX Live Wallpaper Loop Maker - Git Ignore
+# ============================================================
+
+# FFmpeg binaries - do NOT commit third-party executables
+bin/*.exe
+bin/*.dll
+bin/*.lib
+bin/*.a
+
+# Input/output media - keep large media out of Git
+WATCH/*
+!WATCH/.gitkeep
+FINAL/*
+!FINAL/.gitkeep
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.wmv
+
+# Temporary FFmpeg concat lists
+list.txt
+*_ffmpeg_list_*.txt
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# IDE/editor
+.vscode/
+.idea/
