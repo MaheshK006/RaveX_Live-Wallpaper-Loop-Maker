@@ -11,6 +11,8 @@ Smooth, seamless looping live wallpapers in HD/4K — gaming setups, PC wallpape
 
 If you make loop content too, feel free to use this tool and drop a link back here or credit the channel — always appreciated. Like, comment, and subscribe if these loops are useful to you!
 
+Author: Mahesh Khadse
+
 ## Features
 
 - Automatic WATCH-folder monitoring
